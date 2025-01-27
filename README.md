@@ -6,6 +6,14 @@ Terraform modules to provision Kubernetes (K8s) resources.
 
 This repository contains a collection of Terraform modules designed to simplify the provisioning and management of Kubernetes resources. These modules can be used to create and manage various Kubernetes components such as namespaces, deployments, services, and more.
 
+## Modules
+
+- Argo: Module to install and configure argo in K8s cluster
+- K8s Cluster Security: Configure Roles and Rolebindings
+- Istio - Install and configure with helm charts
+- Thanos + Grafana - Install and configure thanos and grafana
+- Security - Setup namespace, networking and security for the namespace
+
 ## Features
 
 - **Modular Design**: Each module is designed to be reusable and composable.
@@ -26,15 +34,6 @@ This repository contains a collection of Terraform modules designed to simplify 
 git clone https://github.com/yourusername/k8s-terraform-modules.git
 cd k8s-terraform-modules
 ```
-
-## Modules
-
-- Argo: Module to install and configure argo in K8s cluster
-- K8s Cluster Security: Configure Roles and Rolebindings
-- Istio - Install and configure with helm charts
-- Thanos + Grafana - Install and configure thanos and grafana
-- Security - Setup namespace, networking and security for the namespace
-
 
 ## Contributing
 
