@@ -1,0 +1,18 @@
+traffic_management_rules:
+  - destination_namespace: "billing"
+    destination_service: ""
+    action: "allow"
+    rules:
+    - source_namespace: "shipping"
+      source_service: ""
+      ports: [8000, 8001]
+namespaces:
+  - namespace: "shipping"
+    enable_mtls: true
+    namespace_key: "shipping"
+    allow_default_in_namespace: true
+  - namespace: "billing"
+    enable_mtls: true
+    namespace_key: "billing"
+    allow_default_in_namespace: true
+monitoring_namespace_name: "monitoring"

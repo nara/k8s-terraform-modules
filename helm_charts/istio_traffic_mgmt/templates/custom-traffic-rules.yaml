@@ -1,0 +1,22 @@
+{{- range .Values.traffic_management_rules }}
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: custom-traffic-rules
+  namespace: {{ .destination_namespace }}
+spec:
+  action: {{ .action | upper }}
+  rules:
+  {{- range .rules }}
+  - from:
+    - source:
+        namespaces: ["{{ .source_namespace }}"]
+    to:
+    - operation:
+        ports:
+        {{- range .ports }}
+        - "{{ . }}"
+        {{- end }}
+  {{- end}}
+---
+{{- end}}

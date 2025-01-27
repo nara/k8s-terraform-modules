@@ -1,0 +1,13 @@
+{{- range .Values.namespaces }}
+{{- if .enable_mtls }}
+apiVersion: security.istio.io/v1
+kind: PeerAuthentication
+metadata:
+  name: peer-auth-restrict-mtls
+  namespace: {{ .namespace }}
+spec:
+  mtls:
+    mode: STRICT
+---
+{{- end}}
+{{- end}}

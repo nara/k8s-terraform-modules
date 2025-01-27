@@ -1,0 +1,2 @@
+configStorePath: "files/thanos-obj-store.yaml"
+grafanaDashboardDir: "files/grafana-dashboards"

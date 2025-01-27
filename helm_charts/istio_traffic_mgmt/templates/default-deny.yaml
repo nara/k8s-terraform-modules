@@ -1,0 +1,12 @@
+{{- range .Values.namespaces }}
+{{- if .allow_default_in_namespace }}
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: istio-default-deny
+  namespace: {{ .namespace }}
+spec:
+  {}
+---
+{{- end}}
+{{- end}}

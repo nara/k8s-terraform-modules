@@ -1,0 +1,8 @@
+{{- $path := .Values.grafanaDashboardDir -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboards-config-map
+  namespace: {{ .Release.Namespace }}
+data:
+{{ ($.Files.Glob (printf "%s/*" $path)).AsConfig | indent 2 }}
